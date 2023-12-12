@@ -41,7 +41,7 @@ const { execute: load, isLoading: loading } = useAsyncState(
       data.value = results;
     }
   },
-  [],
+  [] as any,
   {
     onError(e) {
       data.value = [];
@@ -86,7 +86,7 @@ watch(isPaged, () => {
       <a class="btn btn-ghost text-xl mx-3">Pokemon Feed</a>
       <span class="text-xs text-slate-500">by Johnny Wu</span>
       <div class="flex-none ml-auto gap-2">
-        <form class="flex gap-2" @submit.prevent="load">
+        <form class="flex gap-2" @submit.prevent="() => load()">
           <div class="form-control">
             <input
               v-model="keyword"

@@ -10,6 +10,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  base: '/pokemon-demo/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
